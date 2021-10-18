@@ -6,6 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 3</title>
     <link rel="stylesheet" href="css/common.css" />
+    <style type="text/css">
+      :root {
+        --gap: 30px;
+        --item-amount: 3;
+      }
+
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(var(--gap) * -1);
+        margin-left: calc(var(--gap) * -1);
+        list-style: none;
+      }
+
+      .item {
+        flex-basis: calc(100% / var(--item-amount) - var(--gap));
+        margin-top: var(--gap);
+        margin-left: var(--gap);
+      }
+
+      .image {
+        display: block;
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
     <p><a href="index.html">Go back</a></p>
@@ -15,3 +40,5 @@
     <script src="js/task-03.js" type="module"></script>
   </body>
 </html>
+
+<img src="" alt="" />
