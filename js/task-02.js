@@ -8,29 +8,23 @@ const ingredients = [
 ];
 
 function makeMarkup({ tagName, content, className }) {
-  // const elem = document.createElement(tagName);
-  // elem.textContent = content;
-  // elem.classList.add(className);
-  // return elem;
-  return `<${tagName} class='${className}'>${content}</${tagName}>`;
+  const elem = document.createElement(tagName);
+  elem.textContent = content;
+  elem.classList.add(className);
+  return elem;
 }
 
 const list = document.querySelector("ul#ingredients");
 
-let markup = "";
+const fragment = document.createDocumentFragment();
 for (const ingredient of ingredients) {
-  // list.append(
-  //   makeMarkup({
-  //     tagName: "li",
-  //     content: ingredient,
-  //     className: "item",
-  //   })
-  // );
-  markup += makeMarkup({
-    tagName: "li",
-    content: ingredient,
-    className: "item",
-  });
+  fragment.appendChild(
+    makeMarkup({
+      tagName: "li",
+      content: ingredient,
+      className: "item",
+    })
+  );
 }
 
-list.innerHTML = markup;
+list.appendChild(fragment);
